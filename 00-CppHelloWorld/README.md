@@ -1,1 +1,1 @@
-VIsual Studio Code - C++11
+Visual Studio Code - C++11
