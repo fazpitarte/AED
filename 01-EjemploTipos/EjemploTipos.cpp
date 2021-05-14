@@ -1,15 +1,9 @@
 #include <iostream>
 #include <cassert>
+#include <string>
 
-using namespace std;
-
-string palabra1 = "casa";
-string palabra2 = "perro";
-string palabra3 = "palindromo";
-
-unsigned num1 = {10};
-unsigned num2 = {50}; 
-unsigned num3 = {3};
+//using namespace std::string_literals;
+using namespace std::literals;
 
 int main () {
 
@@ -31,17 +25,17 @@ int main () {
     assert ('B'/'!'==2);
     assert ('}'%'!'==26);
     
-    //Tipo Unsigned
+    //Tipo Unsigned int
 
-    assert (num1==num1);
-    assert (num1!=num2);
-    assert (num1<=num2);
-    assert (num2>=num1);
-    assert (num1+num2 == 60);
-    assert (num2-num1 == 40);
-    assert (num1*num2==500);
-    assert (num2/num1==5);
-    assert (num2%num3==2);
+    assert (10U==10U);
+    assert (10U!=50U);
+    assert (10U<=50U);
+    assert (50U>=10U);
+    assert (10U+50U == 60U);
+    assert (50U-10U == 40U);
+    assert (10U*50U==500U);
+    assert (50U/10U==5U);
+    assert (50U%3U==2U);
 
     //Tipo Int
 
@@ -68,11 +62,17 @@ int main () {
    
     //Tipo String
 
-    assert (palabra1==palabra1);
-    assert (palabra1!=palabra2);
-    assert (palabra1<= palabra2);
-    assert (palabra2>=palabra1);
-    assert (palabra1 +palabra2 == "casaperro");
-    assert (palabra1.length () == 4);
+    assert (std::string("casa")==std::string("casa"));
+    assert (std::string("casa")!=std::string("perro"));
+    assert (std::string("casa")<= std::string("perro"));
+    assert (std::string("perro")>=std::string("casa"));
+    assert (std::string("casa") + std::string("perro") == std::string ("casaperro"));
+    assert (std::string ("casa").length () == 4);
+
+    //Ejemplo sufijos y notacion cientifica
+
+    assert ("casa"s.length()==4);   
+    assert (10U==10U);
+    assert (1.82E-5<=1.94E7);
     
 }
